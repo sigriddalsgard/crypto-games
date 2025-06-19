@@ -1,6 +1,6 @@
 # 🧠 Crypto-Games
 
-> *Three fun cryptography-based mini challenges: XOR, Proof of Work, and Merkle Trees — can you beat them all?*
+> *Three fun cryptography-based mini challenges: XOR, Proof of Work, and Merkle Trees*
 
 ## 🎯 Overview
 
