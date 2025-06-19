@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 
+#include "game1_xor.h"
+
 #define XOR_KEY 'S'
 
 void encryptDecrypt(char inpString[]) {
@@ -11,10 +13,9 @@ void encryptDecrypt(char inpString[]) {
   }
 }
 
-int main() {
+int game1_xor(void) {
 
-  printf("\nWelcome to the 1st out of 5 games!\n"
-         "Here is your encrypted message (in Hex):\n\n");
+  printf("\nThis is a XOR challenge, where you have to decrypt this hex-message:\n");
 
   char originalString[] = "Holepunch is awesome";
   encryptDecrypt(originalString);
@@ -22,10 +23,10 @@ int main() {
   for (int i = 0; i < strlen(originalString); i++) {
     printf("0x%02X ", (unsigned char)originalString[i]);
   }
-  
-  printf("\n\nKey: %c \n\n"
-         "Now you have to decrypt the message by using XOR. "
-         "Your answer must be the decrypted string:\n", XOR_KEY);
+
+  printf("\nKey: %c \n\n"
+         "Enter your answer below — it should be the decrypted string:\n",
+         XOR_KEY);
 
   char guess[100];
 
@@ -36,9 +37,9 @@ int main() {
 
   if (strcmp(guess, originalString) == 0) {
     printf("YOU GUESSED IT!🥳 You can now move on to the next challenge!\n");
+    return 1;
   } else {
     printf("❌ Wrong guess - try again❌ \n");
+    return 0;
   }
-  return 0;
 }
-
